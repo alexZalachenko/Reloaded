@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 267c4a11819ccbe459bcc7ef5646160d
-timeCreated: 1481309689
+timeCreated: 1481499366
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -20,6 +20,10 @@ TextureImporter:
     21300026: Home_1
     21300028: CilcleHolder_1
     21300030: Box_1
+    21300032: Letter_W
+    21300034: Letter_T
+    21300036: Letter_N
+    21300038: Letter_S
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -271,6 +275,58 @@ TextureImporter:
         y: 1714
         width: 1046
         height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Letter_W
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1705
+        width: 419
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Letter_T
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 1419
+        width: 292
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Letter_N
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 1404
+        width: 269
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Letter_S
+      rect:
+        serializedVersion: 2
+        x: 1834
+        y: 1121
+        width: 214
+        height: 290
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

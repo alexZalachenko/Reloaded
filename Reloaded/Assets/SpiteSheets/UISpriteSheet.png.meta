@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 812a063363f4cc14cb02dd07519bc250
-timeCreated: 1481302533
+timeCreated: 1481510743
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -19,7 +19,8 @@ TextureImporter:
     21300024: Number_1
     21300026: Clock
     21300028: Box
-    21300030: UISpriteSheet_0
+    21300030: Number_0
+    21300032: Letter_L
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -264,13 +265,26 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: UISpriteSheet_0
+      name: Number_0
       rect:
         serializedVersion: 2
         x: 257
         y: 331
         width: 70
         height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Letter_L
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 330
+        width: 67
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

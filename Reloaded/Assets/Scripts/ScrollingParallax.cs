@@ -19,25 +19,9 @@ public class ScrollingParallax : MonoBehaviour {
     void Start()
     {
         c_doubleCameraWidth = c_camera.GetComponent<Camera>().aspect * c_camera.GetComponent<Camera>().orthographicSize*4;
-
         c_leftCameraBound = c_camera.transform.position.x - c_camera.GetComponent<Camera>().aspect * c_camera.GetComponent<Camera>().orthographicSize;
 
-        //clone all the background sprites, so when doing scrolling parallax the movement looks to be continous without gaps
-        //SpriteRenderer[] t_spritesAux = c_sprites;
-        //int t_prevLength = c_sprites.Length;
-        //c_sprites = new SpriteRenderer[c_sprites.Length * 2];
-        //for (int t_sprite = 0; t_sprite < c_sprites.Length; t_sprite++)
-        //{
-        //    if (t_sprite < t_spritesAux.Length)
-        //        c_sprites[t_sprite] = t_spritesAux[t_sprite];
-        //    else
-        //    {
-        //        c_sprites[t_sprite] = (Instantiate(c_sprites[t_sprite- t_prevLength].gameObject, transform) as GameObject).GetComponent<SpriteRenderer>();
-        //        c_sprites[t_sprite].transform.position = new Vector2((c_sprites[t_sprite - t_prevLength].transform.position.x + c_sprites[t_sprite].sprite.bounds.extents.x * 2),
-        //                                                                  c_sprites[t_sprite - t_prevLength].transform.position.y);
-        //        c_sprites[t_sprite].color = Color.green;
-        //    }
-        //}
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
