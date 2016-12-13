@@ -69,14 +69,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\OnGameEndScript.cs" />
+    <Compile Include="Assets\Scripts\AnimationEventHelper.cs" />
     <Compile Include="Assets\Scripts\ChoiceMenu.cs" />
     <Compile Include="Assets\Scripts\Clock.cs" />
+    <Compile Include="Assets\Scripts\EnemyDecisionMaker.cs" />
     <Compile Include="Assets\Scripts\EntitySimpleMovement.cs" />
     <Compile Include="Assets\Scripts\EntitySpawner.cs" />
     <Compile Include="Assets\Scripts\GUIFunctions.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\OnGameEndScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerGUIController.cs" />
     <Compile Include="Assets\Scripts\RandomSprite.cs" />
     <Compile Include="Assets\Scripts\ScrollingParallax.cs" />
   </ItemGroup>

@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 
 public class ChoiceMenu : MonoBehaviour {
+    [SerializeField]
+    private Player c_controlled = null;
 
     void Awake()
     {
@@ -28,6 +30,13 @@ public class ChoiceMenu : MonoBehaviour {
     private void EnableButtons()
     {
         for (int t_index = 0; t_index < gameObject.transform.childCount; t_index++)
-            gameObject.transform.GetChild(t_index).GetComponent<Button>().interactable = true;
+        {
+            if (gameObject.transform.GetChild(t_index).name != "Attack")
+                gameObject.transform.GetChild(t_index).GetComponent<Button>().interactable = true;
+            else if (c_controlled.Ammo >= 1)
+                gameObject.transform.GetChild(t_index).GetComponent<Button>().interactable = true;
+            else
+                gameObject.transform.GetChild(t_index).GetComponent<Button>().interactable = false;
+        }
     }
 }

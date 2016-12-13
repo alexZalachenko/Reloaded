@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class Clock : MonoBehaviour {
 
     [SerializeField]
-    private Image c_numberDisplayed;
+    private Image c_numberDisplayed = null;
     [SerializeField]
-    private Sprite[] c_numbers;
+    private Sprite[] c_numbers = null;
     [SerializeField]
-    float c_countdownFrecuency;
+    float c_countdownFrecuency = 1;
     private int c_currentNumber;
 
     public delegate void OnCountdownEnd();

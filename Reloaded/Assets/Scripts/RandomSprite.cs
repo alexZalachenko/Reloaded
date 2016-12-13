@@ -4,9 +4,9 @@ using System.Collections;
 public class RandomSprite : MonoBehaviour {
 
     [SerializeField]
-    private Sprite[] c_sprites;
+    private Sprite[] c_sprites = null;
     [SerializeField]
-    private SpriteRenderer c_spriteRenderer;
+    private SpriteRenderer c_spriteRenderer = null;
 
     void Awake()
     {

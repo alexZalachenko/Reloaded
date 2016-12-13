@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
 public class Player : MonoBehaviour {
+    #region Variables
     public enum Decision
     {
         none,
         ammo,
         health,
-        attack
+        attack,
+        block
     }
     public Decision c_lastDecision
     {
@@ -14,7 +16,17 @@ public class Player : MonoBehaviour {
         get;
     }
     private Animator c_playerAnimator;
-    
+
+    [SerializeField]
+    private PlayerGUIController c_playerGUIController = null;
+
+    public delegate void OnAnimationEnded();
+    public OnAnimationEnded c_onAnimationEnded
+    {
+        set;
+        get;
+    }
+
     public int Health
     {
         set;
@@ -30,10 +42,14 @@ public class Player : MonoBehaviour {
         set;
         get;
     }
+    #endregion
 
     void Awake()
     {
         c_playerAnimator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+    }
+    void Start()
+    {
         c_lastDecision = Decision.none;
         Health = 1;
         Ammo = 0;
@@ -42,13 +58,16 @@ public class Player : MonoBehaviour {
 
     public void IncreaseAmmo()
     {
-        ++Ammo;
         c_lastDecision = Decision.ammo;
     }
     public void IncreaseHealth()
     {
-        ++Health;
         c_lastDecision = Decision.health;
+    }
+    public void LoseHealth(int p_damage)
+    {
+        Health -= p_damage;
+        c_playerGUIController.Health = Health;
     }
 
     public void MakeAction()
@@ -58,18 +77,26 @@ public class Player : MonoBehaviour {
             case Decision.ammo:
                 c_playerAnimator.SetTrigger("Reload");
                 ++Ammo;
+                c_playerGUIController.Ammo = Ammo;
                 break;
             case Decision.health:
                 c_playerAnimator.SetTrigger("Heal");
                 ++Health;
+                c_playerGUIController.Health = Health;
                 break;
             case Decision.attack:
                 c_playerAnimator.SetTrigger("Attack");
+                --Ammo;
+                c_playerGUIController.Ammo = Ammo;
+                break;
+            case Decision.block:
+                c_playerAnimator.SetTrigger("Heal");
                 break;
         }
+        if (c_lastDecision == Decision.none)
+            c_onAnimationEnded();
         c_lastDecision = Decision.none;
     }
-
     public void Die()
     {
         c_playerAnimator.SetTrigger("Die");
@@ -77,5 +104,9 @@ public class Player : MonoBehaviour {
     public void Attack()
     {
         c_lastDecision = Decision.attack;
+    }
+    public void Block()
+    {
+        c_lastDecision = Decision.block;
     }
 }

@@ -3,7 +3,7 @@
 public class EntitySimpleMovement : MonoBehaviour {
 
     [SerializeField]
-    private float c_speed;
+    private float c_speed = 1;
     
     public float Bound
     {

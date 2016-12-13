@@ -5,19 +5,19 @@ public class EntitySpawner : MonoBehaviour {
 
     [SerializeField]
     [Range(0,1)]
-    private float c_spawningFrequency;
+    private float c_spawningFrequency = 0.01f;
     [SerializeField]
-    private AnimationCurve c_groupingFrequency;
+    private AnimationCurve c_groupingFrequency = null;
     [SerializeField]
-    private int c_maxEntitiesPerSpawn;
+    private int c_maxEntitiesPerSpawn = 3;
     [SerializeField]
-    private GameObject c_entityToSpawn;
+    private GameObject c_entityToSpawn = null;
     private List<GameObject> c_entitiesPool;
     [SerializeField]
-    private Camera c_camera;
+    private Camera c_camera = null;
 
     [SerializeField]
-    private float c_spawningOffset;
+    private float c_spawningOffset = 1;
     private float c_topBound;
     private float c_bottomBound;
     private float c_rightCameraBound;

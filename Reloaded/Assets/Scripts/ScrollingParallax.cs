@@ -4,17 +4,31 @@ public class ScrollingParallax : MonoBehaviour {
 
     #region Variables
     [SerializeField]
-    private SpriteRenderer[] c_sprites;
+    private SpriteRenderer[] c_sprites = null;
 
     [SerializeField]
-    private float[] c_speeds;
+    private float[] c_speeds = null;
 
     [SerializeField]
-    private Transform c_camera;
+    private Transform c_camera = null;
 
     private float c_leftCameraBound;
     private float c_doubleCameraWidth;
+
+    private static GameObject c_singletonInstance;
     #endregion
+
+    void Awake()
+    {
+        if (c_singletonInstance != null && c_singletonInstance != gameObject)
+            Destroy(gameObject);
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            c_singletonInstance = gameObject;
+        }
+    }
+
 
     void Start()
     {
