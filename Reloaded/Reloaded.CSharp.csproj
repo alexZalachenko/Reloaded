@@ -77,6 +77,8 @@
     <Compile Include="Assets\Scripts\EntitySpawner.cs" />
     <Compile Include="Assets\Scripts\GUIFunctions.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\MultiplayerPlayer.cs" />
+    <Compile Include="Assets\Scripts\NetworkManagerPlayerSpawn.cs" />
     <Compile Include="Assets\Scripts\OnGameEndScript.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerGUIController.cs" />
